@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YAN STORE OFFICIEL</title>
+  <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dyp3dqkwv/image/upload/v1781350963/LOGO_iqrcgr.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body id="top">
+
+<!-- ===== HEADER ===== -->
+<header>
+  <nav>
+    <div class="logo">
+      <a href="YANSTORE.html">
+        <img src="https://res.cloudinary.com/dyp3dqkwv/image/upload/v1781350963/LOGO_iqrcgr.jpg" alt="Logo YAN STORE OFFICIEL" />
+        YAN STORE
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="YANSTORE.html" class="active">Accueil</a>
+      <a href="Articles.html">Articles</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ======= TOAST ======= -->
+<div id="toast"></div>
+
+<!-- ======= PANIER LATÉRAL ======= -->
+<div id="cart-drawer">
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <div class="drawer-header">
+    <div style="display:flex;align-items:center;gap:6px;">
+      <h3>MON PANIER</h3>
+      <span class="cart-total-count" id="cart-total-count">0</span>
+    </div>
+    <button class="drawer-close" id="drawer-close" aria-label="Fermer le panier">✕</button>
+  </div>
+  <div class="drawer-list" id="drawer-list">
+    <div class="cart-empty-msg" id="cart-empty">
+      <span class="empty-icon">🛒</span>
+      Votre panier est vide.<br>Ajoutez des articles pour commander.
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <div class="drawer-total-line">
+      <span>Total confirmé</span>
+      <span class="total-amount" id="drawer-total">0 FCFA</span>
+    </div>
+    <p class="drawer-note">✓ Confirmez chaque article avant de commander</p>
+    <button class="btn-whatsapp-order" id="btn-whatsapp-order" disabled>
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#fff" d="M16 2C8.268 2 2 8.268 2 16c0 2.472.672 4.789 1.845 6.779L2 30l7.41-1.822A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.54 11.54 0 0 1-5.878-1.606l-.42-.252-4.4 1.082 1.12-4.266-.274-.436A11.552 11.552 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4c6.41 0 11.6 5.19 11.6 11.6 0 6.41-5.19 11.6-11.6 11.6zm6.352-8.684c-.35-.176-2.068-1.02-2.388-1.136-.32-.116-.554-.176-.786.176-.232.35-.9 1.136-1.104 1.37-.204.232-.406.262-.756.086-.35-.176-1.478-.545-2.814-1.736-1.04-.928-1.742-2.074-1.946-2.424-.204-.35-.022-.54.154-.714.158-.158.35-.406.526-.61.176-.202.232-.35.35-.584.116-.232.058-.436-.028-.61-.088-.174-.786-1.896-1.078-2.598-.284-.682-.574-.588-.786-.6-.204-.01-.438-.012-.672-.012-.232 0-.61.088-.93.438-.32.35-1.218 1.19-1.218 2.9 0 1.71 1.246 3.362 1.42 3.594.176.232 2.45 3.74 5.938 5.244.83.358 1.478.572 1.982.732.834.264 1.592.226 2.192.138.668-.1 2.068-.846 2.36-1.664.29-.818.29-1.52.204-1.664-.086-.144-.32-.232-.67-.408z"/>
+      </svg>
+      COMMANDER SUR WHATSAPP
+    </button>
+  </div>
+</div>
+
+<!-- ======= BOUTON FLOTTANT PANIER ======= -->
+<button id="floating-cart" aria-label="Ouvrir le panier">
+  🛒
+  <span class="fc-badge" id="fc-badge">0</span>
+</button>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-eyebrow">✦ Bienvenue chez ✦</div>
+  <h1>YAN STORE<br>OFFICIEL</h1>
+  <p>La qualité a enfin un nom. Des articles premium sélectionnés pour vous.</p>
+  <a href="Articles.html" class="cta-button">COMMENCER MON ACHAT →</a>
+</section>
+
+<!-- ===== KEY STATS ===== -->
+<section class="key-stats">
+  <h2>Chiffres Clés</h2>
+  <div class="stats-container">
+    <div class="stat">
+      <span class="number">+100K</span>
+      <p>Articles certifiés</p>
+    </div>
+    <div class="stat">
+      <span class="number">24/7</span>
+      <p>Service en ligne</p>
+    </div>
+    <div class="stat">
+      <span class="number">4</span>
+      <p>Moyens de paiement</p>
+    </div>
+    <div class="stat">
+      <span class="number">15</span>
+      <p>Catégories</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SÉLECTION DU MOMENT ===== -->
+<div id="commencez"></div>
+<section class="section-title">
+  <h2>Sélection du Moment</h2>
+</section>
+
+<section class="featured-destinations">
+  <!-- Article 1 -->
+  <div class="destination">
+    <div class="image-container">
+      <img src="https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg" alt="Sneakers Premium">
+    </div>
+    <div class="dest-info">
+      <h3>Sneakers Premium</h3>
+      <p>Confort et style réunis pour chaque pas.</p>
+      <span class="price">45 000 FCFA</span>
+      <button class="btn-cart" data-id="h1" data-name="Sneakers Premium" data-price="45000">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Ajouter au panier
+      </button>
+    </div>
+  </div>
+  <!-- Article 2 -->
+  <div class="destination">
+    <div class="image-container">
+      <img src="https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg" alt="Montre Luxe">
+    </div>
+    <div class="dest-info">
+      <h3>Montre Luxe</h3>
+      <p>Élégance intemporelle au poignet.</p>
+      <span class="price">120 000 FCFA</span>
+      <button class="btn-cart" data-id="h2" data-name="Montre Luxe" data-price="120000">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Ajouter au panier
+      </button>
+    </div>
+  </div>
+  <!-- Article 3 -->
+  <div class="destination">
+    <div class="image-container">
+      <img src="https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg" alt="Parfum Signature">
+    </div>
+    <div class="dest-info">
+      <h3>Parfum Signature</h3>
+      <p>Une fragrance unique qui vous distingue.</p>
+      <span class="price">35 000 FCFA</span>
+      <button class="btn-cart" data-id="h3" data-name="Parfum Signature" data-price="35000">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Ajouter au panier
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TÉMOIGNAGES ===== -->
+<section class="testimonials">
+  <h2>Ce que disent nos clients</h2>
+  <div class="testimonial-container">
+    <div class="testimonial">
+      <span class="stars-rating">★★★★★</span>
+      <p>YAN STORE c'est vraiment la qualité ! Mes commandes arrivent toujours en parfait état. C'est OKALAMAR !</p>
+      <p class="author">— DIDI B</p>
+    </div>
+    <div class="testimonial">
+      <span class="stars-rating">★★★★★</span>
+      <p>Des souvenirs inoubliables à chaque achat. Le service client est au top, YAN STORE est whaou !</p>
+      <p class="author">— DR. JOHNSON</p>
+    </div>
+    <div class="testimonial">
+      <span class="stars-rating">★★★★☆</span>
+      <p>Très cool, je recommande à tous mes amis. Livraison rapide et produits au-dessus de mes attentes.</p>
+      <p class="author">— HIMRA</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTEZ-NOUS (fonctionnel) ===== -->
+<section class="contact" id="contact-section">
+  <h2>Contactez-Nous</h2>
+  <form class="contact-form" id="contact-form" onsubmit="submitForm(event)">
+    <input type="text" name="nom" placeholder="Votre nom" required>
+    <input type="email" name="email" placeholder="Votre email" required>
+    <select name="type" required>
+      <option value="">Type de suggestion</option>
+      <option value="info">Demande d'information</option>
+      <option value="avis">Donner un avis</option>
+      <option value="bug">Signaler un bug</option>
+      <option value="message">Envoyer un message</option>
+    </select>
+    <textarea name="message" placeholder="Votre message..." rows="5" required></textarea>
+    <button type="submit">Envoyer le message ✉</button>
+    <div class="success-msg" id="success-msg">
+      ✅ Message envoyé avec succès ! Nous vous répondrons dans les 24h.
+    </div>
+  </form>
+</section>
+
+<!-- ===== SCROLL TOP ===== -->
+<a href="#top" class="scroll-top-btn" title="Retour en haut">↑</a>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>&copy; 2026 YAN STORE OFFICIEL — Tous droits réservés | 
+    <a href="contact.html">Contact WhatsApp</a>
+  </p>
+</footer>
+
+<script>
+/* =====================================================
+   PANIER — même logique qu'Articles.html
+===================================================== */
+const IMG_HOME = "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg";
+
+let cart = [];
+
+function fmt(n) {
+  return n.toLocaleString("fr-FR") + " FCFA";
+}
+
+/* Ajouter au panier */
+function addToCart(id, name, price) {
+  if (cart.some(c => c.id === id)) {
+    showToast(`"${name}" est déjà dans le panier.`);
+    return;
+  }
+  cart.push({ id, name, price, img: IMG_HOME, confirmed: false });
+  renderCart();
+  showToast(`✅ "${name}" ajouté au panier !`);
+}
+
+/* Supprimer */
+function removeFromCart(id) {
+  cart = cart.filter(c => c.id !== id);
+  renderCart();
+}
+
+/* Confirmer / déconfirmer */
+function toggleConfirm(id) {
+  const item = cart.find(c => c.id === id);
+  if (item) item.confirmed = !item.confirmed;
+  renderCart();
+}
+
+/* Rendu du drawer */
+function renderCart() {
+  const list     = document.getElementById("drawer-list");
+  const emptyMsg = document.getElementById("cart-empty");
+  const countEl  = document.getElementById("cart-total-count");
+  const totalEl  = document.getElementById("drawer-total");
+  const fcBadge  = document.getElementById("fc-badge");
+  const btnWA    = document.getElementById("btn-whatsapp-order");
+
+  countEl.textContent = cart.length;
+  fcBadge.textContent = cart.length;
+  fcBadge.classList.toggle("visible", cart.length > 0);
+
+  const confirmed = cart.filter(c => c.confirmed);
+  const total = confirmed.reduce((sum, c) => sum + c.price, 0);
+  totalEl.textContent = fmt(total);
+  btnWA.disabled = confirmed.length === 0;
+
+  Array.from(list.children).forEach(el => {
+    if (!el.classList.contains("cart-empty-msg")) el.remove();
+  });
+
+  if (cart.length === 0) {
+    emptyMsg.style.display = "";
+    return;
+  }
+  emptyMsg.style.display = "none";
+
+  cart.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "cart-item" + (item.confirmed ? " confirmed" : "");
+    row.innerHTML = `
+      <img src="${item.img}" alt="${item.name}">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">${fmt(item.price)}</div>
+      </div>
+      <div class="cart-item-actions">
+        <button class="btn-confirm" title="${item.confirmed ? "Annuler" : "Confirmer"}" data-id="${item.id}">✓</button>
+        <button class="btn-delete" title="Supprimer" data-id="${item.id}">🗑</button>
+      </div>
+    `;
+    row.querySelector(".btn-confirm").addEventListener("click", () => toggleConfirm(item.id));
+    row.querySelector(".btn-delete").addEventListener("click",  () => removeFromCart(item.id));
+    list.appendChild(row);
+  });
+}
+
+/* Commander sur WhatsApp */
+document.getElementById("btn-whatsapp-order").addEventListener("click", () => {
+  const confirmed = cart.filter(c => c.confirmed);
+  if (!confirmed.length) return;
+  const total = confirmed.reduce((sum, c) => sum + c.price, 0);
+  let msg = "Bonjour YAN STORE 👋\n\nJe souhaite passer commande :\n\n";
+  confirmed.forEach((item, i) => { msg += `${i + 1}. ${item.name} — ${fmt(item.price)}\n`; });
+  msg += `\n💰 Total : ${fmt(total)}\n\nMerci de confirmer ma commande.`;
+  window.open(`https://wa.me/2250500944066?text=${encodeURIComponent(msg)}`, "_blank");
+});
+
+/* Drawer open / close */
+function openDrawer()  { document.getElementById("cart-drawer").classList.add("open");    document.body.style.overflow = "hidden"; }
+function closeDrawer() { document.getElementById("cart-drawer").classList.remove("open"); document.body.style.overflow = "";       }
+
+document.getElementById("floating-cart").addEventListener("click", openDrawer);
+document.getElementById("drawer-close").addEventListener("click", closeDrawer);
+document.getElementById("drawer-overlay").addEventListener("click", closeDrawer);
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
+
+/* Boutons "Ajouter au panier" de la sélection */
+document.querySelectorAll(".btn-cart[data-id]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    addToCart(btn.dataset.id, btn.dataset.name, parseInt(btn.dataset.price));
+  });
+});
+
+/* Toast */
+let toastTimer;
+function showToast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), 3000);
+}
+
+/* ---- Formulaire de contact ---- */
+function submitForm(e) {
+  e.preventDefault();
+  const form    = document.getElementById("contact-form");
+  const nom     = form.nom.value.trim();
+  const email   = form.email.value.trim();
+  const type    = form.type.value;
+  const message = form.message.value.trim();
+  if (!nom || !email || !type || !message) return;
+  const phone = "2250500944066";
+  const text  = encodeURIComponent(`Bonjour YAN STORE 👋\n\nNom: ${nom}\nEmail: ${email}\nType: ${type}\n\nMessage:\n${message}`);
+  document.getElementById("success-msg").style.display = "block";
+  form.reset();
+  setTimeout(() => {
+    if (confirm("✅ Message enregistré !\n\nVoulez-vous aussi l'envoyer directement via WhatsApp ?")) {
+      window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+    }
+  }, 400);
+}
+
+/* ---- Stats animation ---- */
+const stats = document.querySelectorAll(".stat");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.style.animationPlayState = "running"; e.target.style.opacity = "1"; }
+  });
+}, { threshold: 0.3 });
+stats.forEach(s => { s.style.animationPlayState = "paused"; observer.observe(s); });
+
+/* Init */
+renderCart();
+</script>
+
+</body>
+</html>

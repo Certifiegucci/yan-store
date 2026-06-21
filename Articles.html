@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles — YAN STORE OFFICIEL</title>
+  <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body id="top">
+
+<!-- ======= HEADER ======= -->
+<header>
+  <nav>
+    <div class="logo">
+      <a href="YANSTORE.html">
+        <img src="https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg" alt="YAN STORE" />
+        YAN STORE
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="YANSTORE.html">Accueil</a>
+      <a href="Articles.html" class="active">Articles</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ======= TOAST ======= -->
+<div id="toast"></div>
+
+<!-- ======= MODAL AGRANDISSEMENT ======= -->
+<div id="product-modal" role="dialog" aria-modal="true" aria-label="Détail article">
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Fermer">✕</button>
+    <img src="" alt="" class="modal-img" id="modal-img">
+    <div class="modal-info">
+      <div class="modal-cat" id="modal-cat"></div>
+      <div class="modal-name" id="modal-name"></div>
+      <div class="modal-price" id="modal-price"></div>
+      <button class="modal-btn-cart" id="modal-btn-cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Ajouter au panier
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= PANIER LATÉRAL ======= -->
+<div id="cart-drawer">
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <div class="drawer-header">
+    <div style="display:flex;align-items:center;gap:6px;">
+      <h3>MON PANIER</h3>
+      <span class="cart-total-count" id="cart-total-count">0</span>
+    </div>
+    <button class="drawer-close" id="drawer-close" aria-label="Fermer le panier">✕</button>
+  </div>
+
+  <div class="drawer-list" id="drawer-list">
+    <div class="cart-empty-msg" id="cart-empty">
+      <span class="empty-icon">🛒</span>
+      Votre panier est vide.<br>Ajoutez des articles pour commander.
+    </div>
+  </div>
+
+  <div class="drawer-footer">
+    <div class="drawer-total-line">
+      <span>Total confirmé</span>
+      <span class="total-amount" id="drawer-total">0 FCFA</span>
+    </div>
+    <p class="drawer-note">✓ Confirmez chaque article avant de commander</p>
+    <button class="btn-whatsapp-order" id="btn-whatsapp-order" disabled>
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#fff" d="M16 2C8.268 2 2 8.268 2 16c0 2.472.672 4.789 1.845 6.779L2 30l7.41-1.822A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.54 11.54 0 0 1-5.878-1.606l-.42-.252-4.4 1.082 1.12-4.266-.274-.436A11.552 11.552 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4c6.41 0 11.6 5.19 11.6 11.6 0 6.41-5.19 11.6-11.6 11.6zm6.352-8.684c-.35-.176-2.068-1.02-2.388-1.136-.32-.116-.554-.176-.786.176-.232.35-.9 1.136-1.104 1.37-.204.232-.406.262-.756.086-.35-.176-1.478-.545-2.814-1.736-1.04-.928-1.742-2.074-1.946-2.424-.204-.35-.022-.54.154-.714.158-.158.35-.406.526-.61.176-.202.232-.35.35-.584.116-.232.058-.436-.028-.61-.088-.174-.786-1.896-1.078-2.598-.284-.682-.574-.588-.786-.6-.204-.01-.438-.012-.672-.012-.232 0-.61.088-.93.438-.32.35-1.218 1.19-1.218 2.9 0 1.71 1.246 3.362 1.42 3.594.176.232 2.45 3.74 5.938 5.244.83.358 1.478.572 1.982.732.834.264 1.592.226 2.192.138.668-.1 2.068-.846 2.36-1.664.29-.818.29-1.52.204-1.664-.086-.144-.32-.232-.67-.408z"/>
+      </svg>
+      COMMANDER SUR WHATSAPP
+    </button>
+  </div>
+</div>
+
+<!-- ======= BOUTON FLOTTANT PANIER ======= -->
+<button id="floating-cart" aria-label="Ouvrir le panier">
+  🛒
+  <span class="fc-badge" id="fc-badge">0</span>
+</button>
+
+<!-- ======= CONTENU PRINCIPAL ======= -->
+<main class="articles-page">
+  <div class="articles-page-title">
+    <h1>NOS ARTICLES</h1>
+    <p>15 catégories · 60 articles · Qualité certifiée</p>
+  </div>
+
+  <!-- CHIPS FILTRE -->
+  <div class="cat-chips" id="cat-chips">
+    <span class="cat-chip active" data-cat="all">🏠 Tout voir</span>
+    <span class="cat-chip" data-cat="basket">🏀 Basket</span>
+    <span class="cat-chip" data-cat="casquette">🧢 Casquette</span>
+    <span class="cat-chip" data-cat="chaussure">👟 Chaussure</span>
+    <span class="cat-chip" data-cat="chemise">👔 Chemise</span>
+    <span class="cat-chip" data-cat="complet">🤵 Complet Maillot</span>
+    <span class="cat-chip" data-cat="cravate">👔 Cravate</span>
+    <span class="cat-chip" data-cat="jean">👖 Jean</span>
+    <span class="cat-chip" data-cat="maillot">👕 Maillot</span>
+    <span class="cat-chip" data-cat="jogging">🏃 Jogging</span>
+    <span class="cat-chip" data-cat="pantalon">👖 Pantalon Tissu</span>
+    <span class="cat-chip" data-cat="polo">🎽 Polo</span>
+    <span class="cat-chip" data-cat="pull">🧥 Pull</span>
+    <span class="cat-chip" data-cat="tunic">👘 Tunic</span>
+    <span class="cat-chip" data-cat="souscorps">🩱 Sous Corps</span>
+    <span class="cat-chip" data-cat="survetement">🧣 Survêtement</span>
+  </div>
+
+  <!-- Les sections sont générées par JS ci-dessous -->
+  <div id="catalogue-root"></div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 YAN STORE OFFICIEL — Tous droits réservés | <a href="contact.html">Contact WhatsApp</a></p>
+</footer>
+
+<!-- ======= SCRIPT ======= -->
+<script>
+/* =====================================================
+   IMAGES — remplace l'URL de chaque article ici
+   Format local  : "IMAGES/nom-du-fichier.jpg"
+   Format distant: "https://..."
+===================================================== */
+const IMAGES = {
+  // ---- Basket ----
+  ba1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Basket 1
+  ba2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Basket 2
+  ba3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Basket 3
+  ba4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Basket 4
+  // ---- Casquette ----
+  ca1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Casquette 1
+  ca2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Casquette 2
+  ca3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Casquette 3
+  ca4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Casquette 4
+  // ---- Chaussure ----
+  ch1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Chaussure 1
+  ch2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Chaussure 2
+  ch3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Chaussure 3
+  ch4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Chaussure 4
+  // ---- Chemise ----
+  cm1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Chemise 1
+  cm2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Chemise 2
+  cm3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Chemise 3
+  cm4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Chemise 4
+  // ---- Complet Maillot ----
+  co1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Complet Maillot 1
+  co2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Complet Maillot 2
+  co3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Complet Maillot 3
+  co4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Complet Maillot 4
+  // ---- Cravate ----
+  cr1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Cravate 1
+  cr2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Cravate 2
+  cr3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Cravate 3
+  cr4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Cravate 4
+  // ---- Jean ----
+  je1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Jean 1
+  je2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Jean 2
+  je3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Jean 3
+  je4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Jean 4
+  // ---- Maillot ----
+  ma1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Maillot 1
+  ma2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Maillot 2
+  ma3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Maillot 3
+  ma4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Maillot 4
+  // ---- Jogging ----
+  jo1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Jogging 1
+  jo2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Jogging 2
+  jo3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Jogging 3
+  jo4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Jogging 4
+  // ---- Pantalon Tissu ----
+  pt1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pantalon Tissu 1
+  pt2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pantalon Tissu 2
+  pt3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pantalon Tissu 3
+  pt4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pantalon Tissu 4
+  // ---- Polo ----
+  po1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Polo 1
+  po2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Polo 2
+  po3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Polo 3
+  po4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Polo 4
+  // ---- Pull ----
+  pu1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pull 1
+  pu2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pull 2
+  pu3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pull 3
+  pu4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pull 4
+  // ---- Tunic ----
+  tu1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Tunic 1
+  tu2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Tunic 2
+  tu3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Tunic 3
+  tu4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Tunic 4
+  // ---- Sous Corps ----
+  sc1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Sous Corps 1
+  sc2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Sous Corps 2
+  sc3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Sous Corps 3
+  sc4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Sous Corps 4
+  // ---- Survêtement ----
+  sv1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Survêtement 1
+  sv2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Survêtement 2
+  sv3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Survêtement 3
+  sv4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Survêtement 4
+};
+
+/* =====================================================
+   CATALOGUE — 15 catégories × 4 articles
+===================================================== */
+const CATALOGUE = [
+  {
+    id: "basket", icon: "🏀", label: "Basket",
+    items: [
+      { id:"ba1", name:"Basket 1", price:0, badge:null },
+      { id:"ba2", name:"Basket 2", price:0, badge:null },
+      { id:"ba3", name:"Basket 3", price:0, badge:null },
+      { id:"ba4", name:"Basket 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "casquette", icon: "🧢", label: "Casquette",
+    items: [
+      { id:"ca1", name:"Casquette 1", price:0, badge:null },
+      { id:"ca2", name:"Casquette 2", price:0, badge:null },
+      { id:"ca3", name:"Casquette 3", price:0, badge:null },
+      { id:"ca4", name:"Casquette 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "chaussure", icon: "👟", label: "Chaussure",
+    items: [
+      { id:"ch1", name:"Chaussure 1", price:0, badge:null },
+      { id:"ch2", name:"Chaussure 2", price:0, badge:null },
+      { id:"ch3", name:"Chaussure 3", price:0, badge:null },
+      { id:"ch4", name:"Chaussure 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "chemise", icon: "👔", label: "Chemise",
+    items: [
+      { id:"cm1", name:"Chemise 1", price:0, badge:null },
+      { id:"cm2", name:"Chemise 2", price:0, badge:null },
+      { id:"cm3", name:"Chemise 3", price:0, badge:null },
+      { id:"cm4", name:"Chemise 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "complet", icon: "🤵", label: "Complet Maillot",
+    items: [
+      { id:"co1", name:"Complet Maillot 1", price:0, badge:null },
+      { id:"co2", name:"Complet Maillot 2", price:0, badge:null },
+      { id:"co3", name:"Complet Maillot 3", price:0, badge:null },
+      { id:"co4", name:"Complet Maillot 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "cravate", icon: "👔", label: "Cravate",
+    items: [
+      { id:"cr1", name:"Cravate 1", price:0, badge:null },
+      { id:"cr2", name:"Cravate 2", price:0, badge:null },
+      { id:"cr3", name:"Cravate 3", price:0, badge:null },
+      { id:"cr4", name:"Cravate 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "jean", icon: "👖", label: "Jean",
+    items: [
+      { id:"je1", name:"Jean 1", price:0, badge:null },
+      { id:"je2", name:"Jean 2", price:0, badge:null },
+      { id:"je3", name:"Jean 3", price:0, badge:null },
+      { id:"je4", name:"Jean 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "maillot", icon: "👕", label: "Maillot",
+    items: [
+      { id:"ma1", name:"Maillot 1", price:0, badge:null },
+      { id:"ma2", name:"Maillot 2", price:0, badge:null },
+      { id:"ma3", name:"Maillot 3", price:0, badge:null },
+      { id:"ma4", name:"Maillot 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "jogging", icon: "🏃", label: "Jogging",
+    items: [
+      { id:"jo1", name:"Jogging 1", price:0, badge:null },
+      { id:"jo2", name:"Jogging 2", price:0, badge:null },
+      { id:"jo3", name:"Jogging 3", price:0, badge:null },
+      { id:"jo4", name:"Jogging 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "pantalon", icon: "👖", label: "Pantalon Tissu",
+    items: [
+      { id:"pt1", name:"Pantalon Tissu 1", price:0, badge:null },
+      { id:"pt2", name:"Pantalon Tissu 2", price:0, badge:null },
+      { id:"pt3", name:"Pantalon Tissu 3", price:0, badge:null },
+      { id:"pt4", name:"Pantalon Tissu 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "polo", icon: "🎽", label: "Polo",
+    items: [
+      { id:"po1", name:"Polo 1", price:0, badge:null },
+      { id:"po2", name:"Polo 2", price:0, badge:null },
+      { id:"po3", name:"Polo 3", price:0, badge:null },
+      { id:"po4", name:"Polo 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "pull", icon: "🧥", label: "Pull",
+    items: [
+      { id:"pu1", name:"Pull 1", price:0, badge:null },
+      { id:"pu2", name:"Pull 2", price:0, badge:null },
+      { id:"pu3", name:"Pull 3", price:0, badge:null },
+      { id:"pu4", name:"Pull 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "tunic", icon: "👘", label: "Tunic",
+    items: [
+      { id:"tu1", name:"Tunic 1", price:0, badge:null },
+      { id:"tu2", name:"Tunic 2", price:0, badge:null },
+      { id:"tu3", name:"Tunic 3", price:0, badge:null },
+      { id:"tu4", name:"Tunic 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "souscorps", icon: "🩱", label: "Sous Corps",
+    items: [
+      { id:"sc1", name:"Sous Corps 1", price:0, badge:null },
+      { id:"sc2", name:"Sous Corps 2", price:0, badge:null },
+      { id:"sc3", name:"Sous Corps 3", price:0, badge:null },
+      { id:"sc4", name:"Sous Corps 4", price:0, badge:null }
+    ]
+  },
+  {
+    id: "survetement", icon: "🧣", label: "Survêtement",
+    items: [
+      { id:"sv1", name:"Survêtement 1", price:0, badge:null },
+      { id:"sv2", name:"Survêtement 2", price:0, badge:null },
+      { id:"sv3", name:"Survêtement 3", price:0, badge:null },
+      { id:"sv4", name:"Survêtement 4", price:0, badge:null }
+    ]
+  }
+];
+/* =====================================================
+   ÉTAT GLOBAL
+===================================================== */
+// cart = [{ ...item, catLabel, confirmed }]
+let cart = [];
+
+/* Format prix */
+function fmt(n) {
+  return n.toLocaleString("fr-FR") + " FCFA";
+}
+
+/* =====================================================
+   RENDU DU CATALOGUE
+===================================================== */
+function renderCatalogue() {
+  const root = document.getElementById("catalogue-root");
+  root.innerHTML = "";
+
+  CATALOGUE.forEach(cat => {
+    const section = document.createElement("section");
+    section.className = "category-section";
+    section.dataset.cat = cat.id;
+
+    section.innerHTML = `
+      <div class="cat-heading">
+        <div class="cat-heading-icon">${cat.icon}</div>
+        <h2>${cat.label}</h2>
+      </div>
+      <div class="product-grid" id="grid-${cat.id}"></div>
+    `;
+    root.appendChild(section);
+
+    const grid = section.querySelector(".product-grid");
+
+    cat.items.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.dataset.id = item.id;
+
+      card.innerHTML = `
+        ${item.badge ? `<span class="p-badge ${item.badge}">${item.badge === "new" ? "NOUVEAU" : "PROMO"}</span>` : ""}
+        <img class="p-img" src="${IMAGES[item.id]}" alt="${item.name}" loading="lazy">
+        <div class="p-foot">
+          <div class="p-name">${item.name}</div>
+          <div class="p-price">${fmt(item.price)}</div>
+          <button class="btn-add" data-id="${item.id}" data-cat="${cat.id}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            Ajouter
+          </button>
+        </div>
+      `;
+
+      /* Click image → modal */
+      card.querySelector(".p-img").addEventListener("click", () => {
+        openModal(item, cat.label);
+      });
+      card.querySelector(".p-name").addEventListener("click", () => {
+        openModal(item, cat.label);
+      });
+
+      /* Bouton Ajouter sur la carte */
+      card.querySelector(".btn-add").addEventListener("click", (e) => {
+        e.stopPropagation();
+        addToCart(item, cat.label, IMAGES[item.id]);
+      });
+
+      grid.appendChild(card);
+    });
+  });
+}
+
+/* =====================================================
+   FILTRE PAR CATÉGORIE
+===================================================== */
+document.getElementById("cat-chips").addEventListener("click", (e) => {
+  const chip = e.target.closest(".cat-chip");
+  if (!chip) return;
+
+  document.querySelectorAll(".cat-chip").forEach(c => c.classList.remove("active"));
+  chip.classList.add("active");
+
+  const cat = chip.dataset.cat;
+  document.querySelectorAll(".category-section").forEach(s => {
+    if (cat === "all" || s.dataset.cat === cat) {
+      s.removeAttribute("hidden");
+    } else {
+      s.setAttribute("hidden", "");
+    }
+  });
+});
+
+/* =====================================================
+   MODAL
+===================================================== */
+let currentModalItem = null;
+let currentModalCat  = null;
+
+function openModal(item, catLabel) {
+  currentModalItem = item;
+  currentModalCat  = catLabel;
+
+  document.getElementById("modal-img").src = IMAGES[item.id];
+  document.getElementById("modal-img").alt = item.name;
+  document.getElementById("modal-name").textContent = item.name;
+  document.getElementById("modal-cat").textContent  = catLabel;
+  document.getElementById("modal-price").textContent = fmt(item.price);
+
+  const btn = document.getElementById("modal-btn-cart");
+  const inCart = cart.some(c => c.id === item.id);
+  btn.textContent = inCart ? "✓ Dans le panier" : "Ajouter au panier";
+  btn.classList.toggle("added", inCart);
+
+  document.getElementById("product-modal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  document.getElementById("product-modal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("modal-close").addEventListener("click", closeModal);
+document.getElementById("modal-overlay").addEventListener("click", closeModal);
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeModal(); closeDrawer(); } });
+
+document.getElementById("modal-btn-cart").addEventListener("click", () => {
+  if (!currentModalItem) return;
+  const btn = document.getElementById("modal-btn-cart");
+  if (btn.classList.contains("added")) return;
+  addToCart(currentModalItem, currentModalCat, IMAGES[currentModalItem.id]);
+  btn.textContent = "✓ Dans le panier";
+  btn.classList.add("added");
+});
+
+/* =====================================================
+   PANIER — LOGIQUE
+===================================================== */
+function addToCart(item, catLabel, img) {
+  if (cart.some(c => c.id === item.id)) {
+    showToast(`"${item.name}" est déjà dans le panier.`);
+    return;
+  }
+  cart.push({ ...item, catLabel, img, confirmed: false });
+  renderCart();
+  showToast(`✅ "${item.name}" ajouté au panier !`);
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(c => c.id !== id);
+  renderCart();
+}
+
+function toggleConfirm(id) {
+  const item = cart.find(c => c.id === id);
+  if (item) item.confirmed = !item.confirmed;
+  renderCart();
+}
+
+function renderCart() {
+  const list      = document.getElementById("drawer-list");
+  const emptyMsg  = document.getElementById("cart-empty");
+  const countEl   = document.getElementById("cart-total-count");
+  const totalEl   = document.getElementById("drawer-total");
+  const fcBadge   = document.getElementById("fc-badge");
+  const btnWA     = document.getElementById("btn-whatsapp-order");
+
+  /* Compteurs */
+  countEl.textContent = cart.length;
+  fcBadge.textContent = cart.length;
+  fcBadge.classList.toggle("visible", cart.length > 0);
+
+  /* Total des articles confirmés */
+  const confirmed = cart.filter(c => c.confirmed);
+  const total = confirmed.reduce((sum, c) => sum + c.price, 0);
+  totalEl.textContent = fmt(total);
+
+  /* Activer bouton WA seulement si au moins 1 confirmé */
+  btnWA.disabled = confirmed.length === 0;
+
+  /* Vider la liste (sauf le message vide) */
+  Array.from(list.children).forEach(el => {
+    if (!el.classList.contains("cart-empty-msg")) el.remove();
+  });
+
+  if (cart.length === 0) {
+    emptyMsg.style.display = "";
+    return;
+  }
+  emptyMsg.style.display = "none";
+
+  cart.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "cart-item" + (item.confirmed ? " confirmed" : "");
+    row.innerHTML = `
+      <img src="${item.img}" alt="${item.name}">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">${fmt(item.price)}</div>
+      </div>
+      <div class="cart-item-actions">
+        <button class="btn-confirm" title="${item.confirmed ? "Annuler confirmation" : "Confirmer cet article"}" data-id="${item.id}">
+          ${item.confirmed ? "✓" : "✓"}
+        </button>
+        <button class="btn-delete" title="Supprimer" data-id="${item.id}">🗑</button>
+      </div>
+    `;
+
+    row.querySelector(".btn-confirm").addEventListener("click", () => toggleConfirm(item.id));
+    row.querySelector(".btn-delete").addEventListener("click", () => removeFromCart(item.id));
+
+    list.appendChild(row);
+  });
+}
+
+/* =====================================================
+   COMMANDE WHATSAPP
+===================================================== */
+document.getElementById("btn-whatsapp-order").addEventListener("click", () => {
+  const confirmed = cart.filter(c => c.confirmed);
+  if (confirmed.length === 0) return;
+
+  const total = confirmed.reduce((sum, c) => sum + c.price, 0);
+
+  let msg = "Bonjour YAN STORE 👋\n\nJe souhaite passer commande :\n\n";
+  confirmed.forEach((item, i) => {
+    msg += `${i + 1}. ${item.name} — ${fmt(item.price)}\n${item.img}\n\n`;
+  });
+  msg += `💰 Total : ${fmt(total)}\n\nMerci de confirmer ma commande.`;
+
+  const phone = "2250500944066";
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank");
+});
+
+/* =====================================================
+   DRAWER PANIER
+===================================================== */
+function openDrawer() {
+  document.getElementById("cart-drawer").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeDrawer() {
+  document.getElementById("cart-drawer").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("floating-cart").addEventListener("click", openDrawer);
+document.getElementById("drawer-close").addEventListener("click", closeDrawer);
+document.getElementById("drawer-overlay").addEventListener("click", closeDrawer);
+
+/* =====================================================
+   TOAST
+===================================================== */
+let toastTimer;
+function showToast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), 3000);
+}
+
+/* =====================================================
+   INIT
+===================================================== */
+renderCatalogue();
+renderCart();
+</script>
+
+</body>
+</html>
