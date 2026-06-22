@@ -178,7 +178,8 @@
 <!-- ===== CONTACTEZ-NOUS (fonctionnel) ===== -->
 <section class="contact" id="contact-section">
   <h2>Contactez-Nous</h2>
-  <form class="contact-form" id="contact-form" onsubmit="submitForm(event)">
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="0efe12d0-c67d-4050-a4ae-049f0988517d">
     <input type="text" name="nom" placeholder="Votre nom" required>
     <input type="email" name="email" placeholder="Votre email" required>
     <select name="type" required>
