@@ -92,7 +92,7 @@
 <main class="articles-page">
   <div class="articles-page-title">
     <h1>NOS ARTICLES</h1>
-    <p>15 catégories · 60 articles · Qualité certifiée</p>
+    <p>15 catégories · 300 articles · Qualité certifiée</p>
   </div>
 
   <!-- CHIPS FILTRE -->
@@ -102,7 +102,7 @@
     <span class="cat-chip" data-cat="casquette">🧢 Casquette</span>
     <span class="cat-chip" data-cat="chaussure">👟 Chaussure</span>
     <span class="cat-chip" data-cat="chemise">👔 Chemise</span>
-    <span class="cat-chip" data-cat="complet">🤵 Complet Maillot</span>
+    <span class="cat-chip" data-cat="complet">🤵 Costume</span>
     <span class="cat-chip" data-cat="cravate">👔 Cravate</span>
     <span class="cat-chip" data-cat="jean">👖 Jean</span>
     <span class="cat-chip" data-cat="maillot">👕 Maillot</span>
@@ -111,7 +111,7 @@
     <span class="cat-chip" data-cat="polo">🎽 Polo</span>
     <span class="cat-chip" data-cat="pull">🧥 Pull</span>
     <span class="cat-chip" data-cat="tunic">👘 Tunic</span>
-    <span class="cat-chip" data-cat="souscorps">🩱 Sous Corps</span>
+    <span class="cat-chip" data-cat="souscorps">👔Chemisette</span>
     <span class="cat-chip" data-cat="survetement">🧣 Survêtement</span>
   </div>
 
@@ -275,11 +275,11 @@ const IMAGES = {
   
 
 
-  // ---- Complet Maillot ----
-  co1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Complet Maillot 1
-  co2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Complet Maillot 2
-  co3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Complet Maillot 3
-  co4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Complet Maillot 4
+  // ---- Costume ----
+  co1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Costume 1
+  co2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Costume 2
+  co3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Costume 3
+  co4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Costume 4
   // ---- Cravate ----
   cr1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Cravate 1
   cr2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Cravate 2
@@ -306,10 +306,49 @@ const IMAGES = {
   pt3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pantalon Tissu 3
   pt4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pantalon Tissu 4
   // ---- Polo ----
-  po1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Polo 1
-  po2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Polo 2
-  po3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Polo 3
-  po4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Polo 4
+  po1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243780/po1_qf1dzl.jpg", // Polo 1
+  po2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243780/po2_r8gwbk.jpg", // Polo 2
+  po3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243780/po3_ctknpe.jpg", // Polo 3
+  po4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243780/po4_awprs2.jpg", // Polo 4
+  po6: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243781/po6_mzlf5c.jpg", // Polo 2
+  po7: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243780/po7_c1fwqt.jpg", // Polo 3
+  po8: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243780/po8_zuxwxs.jpg", // Polo 4
+  po9: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243781/po9_ugeu1f.jpg", // Polo 1
+  po10: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243781/po10_nrgmny.jpg", // Polo 2
+  po11: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243781/po11_vxzfuq.jpg", // Polo 3
+  po12: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243781/po12_akqnot.jpg", // Polo 4
+  po13: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243782/po13_qfnxa8.jpg", // Polo 1
+  po14: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243782/po14_pzbrhx.jpg", // Polo 2
+  po15: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243782/po15_axcz60.jpg", // Polo 3
+  po16: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243782/po16_czo8ya.jpg", // Polo 4
+  po17: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243782/po17_jlqjss.jpg", // Polo 1
+  po18: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243782/po18_t1gyit.jpg", // Polo 2
+  po19: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243783/po19_czyiqx.jpg", // Polo 3
+  po20: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243783/po20_e3tjrx.jpg", // Polo 4
+  po21: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243783/po21_mvwk0i.jpg", // Polo 1
+  po22: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243785/po22_qzyrou.jpg", // Polo 2
+  po23: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243786/po23_riwaxq.jpg", // Polo 3
+  po24: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243786/po24_uxfq3z.jpg", // Polo 4
+  po25: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243786/po25_wwabjw.jpg", // Polo 1
+  po26: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243787/po26_v44co5.jpg", // Polo 2
+  po27: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243787/po27_hnbj0r.jpg", // Polo 3
+  po28: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243787/po28_u4ewg2.jpg", // Polo 4
+  po29: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243787/po29_rt8qke.jpg", // Polo 1
+  po30: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243788/po30_hpwdzu.jpg", // Polo 2
+  po31: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243788/po31_upug84.jpg", // Polo 3
+  po32: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243788/po32_f6hbrc.jpg", // Polo 4
+  po33: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243788/po33_neasf9.jpg", // Polo 1
+  po34: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243789/po34_cuzm14.jpg", // Polo 2
+  po35: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243789/po35_rlk1pa.jpg", // Polo 3
+  po36: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243789/po36_ectb8v.jpg", // Polo 4
+  po38: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243789/po38_bskyen.jpg", // Polo 2
+  po39: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243791/po39_adusvp.jpg", // Polo 3
+  po40: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243791/po40_xccenf.jpg", // Polo 4
+  po41: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243792/po41_ywi6ih.jpg", // Polo 1
+  po42: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243792/po42_sfa58u.jpg", // Polo 2
+  po43: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243793/po43_zfxmt8.jpg", // Polo 3
+  po44: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782243793/po46_n3elha.jpg", // Polo 4
+  
   // ---- Pull ----
   pu1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pull 1
   pu2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Pull 2
@@ -320,11 +359,35 @@ const IMAGES = {
   tu2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Tunic 2
   tu3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Tunic 3
   tu4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Tunic 4
-  // ---- Sous Corps ----
-  sc1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Sous Corps 1
-  sc2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Sous Corps 2
-  sc3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Sous Corps 3
-  sc4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Sous Corps 4
+  // ---- Chemisette ----
+  sc1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246994/cht1_fw0zxp.jpg", // Chemisette 1
+  sc2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246995/cht2_zqwja7.jpg", // Chemisette 2
+  sc3: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246996/cht3_qa1qqn.jpg", // Chemisette 3
+  sc4: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246998/cht4_ddfklo.jpg", // Chemisette 4
+  sc5: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246999/cht5_u5yllg.jpg", // Chemisette 1
+  sc6: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247000/cht6_rytcvb.jpg", // Chemisette 2
+  sc7: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247001/cht7_p7clnw.jpg", // Chemisette 3
+  sc8: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247002/cht8_nbeg8p.jpg", // Chemisette 4
+  sc9: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247003/cht9_enwprz.jpg", // Chemisette 1
+  sc10: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247005/cht10_nravtn.jpg", // Chemisette 2
+  sc11: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247006/cht11_y7opc7.jpg", // Chemisette 3
+  sc12: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247007/cht12_jsby4y.jpg", // Chemisette 4
+  sc13: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247008/cht13_gejdee.jpg", // Chemisette 1
+  sc14: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247009/cht14_dy4iem.jpg", // Chemisette 2
+  sc15: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247010/cht15_dx87t0.jpg", // Chemisette 3
+  sc16: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247012/cht16_lmgx2j.jpg", // Chemisette 4
+  sc17: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782247013/cht17_dssyts.jpg", // Chemisette 1
+  sc18: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246976/cht18_r1wmx2.jpg", // Chemisette 2
+  sc19: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246976/cht19_djysxc.jpg", // Chemisette 3
+  sc20: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246977/cht20_l1z0td.jpg", // Chemisette 4
+  sc21: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246977/cht21_hfpkx5.jpg", // Chemisette 1
+  sc22: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246978/cht22_t2ugeq.jpg", // Chemisette 2
+  sc23: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246979/cht23_fgsmle.jpg", // Chemisette 3
+  sc24: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246980/cht24_zkldct.jpg", // Chemisette 4
+  sc25: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246980/cht25_kflxun.jpg", // Chemisette 1
+  sc26: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246982/cht26_bbunvr.jpg", // Chemisette 2
+  sc27: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246983/cht27_gzrixh.jpg", // Chemisette 3
+  sc28: "https://res.cloudinary.com/dyp3dqkwv/image/upload/v1782246984/cht28_wg7vks.jpg", // Chemisette 4
   // ---- Survêtement ----
   sv1: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Survêtement 1
   sv2: "https://res.cloudinary.com/dyp3dqkwv/image/upload/q_auto/f_auto/v1781642366/culture_vjlvqy.jpg", // Survêtement 2
@@ -494,12 +557,12 @@ const CATALOGUE = [
     ]
   },
   {
-    id: "complet", icon: "🤵", label: "Complet Maillot",
+    id: "complet", icon: "🤵", label: "Costume",
     items: [
-      { id:"co1", name:"Complet Maillot 1", price:0, badge:null },
-      { id:"co2", name:"Complet Maillot 2", price:0, badge:null },
-      { id:"co3", name:"Complet Maillot 3", price:0, badge:null },
-      { id:"co4", name:"Complet Maillot 4", price:0, badge:null }
+      { id:"co1", name:"Costume", price:0, badge:null },
+      { id:"co2", name:"Costume", price:0, badge:null },
+      { id:"co3", name:"Costume", price:0, badge:null },
+      { id:"co4", name:"Costume", price:0, badge:null }
     ]
   },
   {
@@ -550,10 +613,49 @@ const CATALOGUE = [
   {
     id: "polo", icon: "🎽", label: "Polo",
     items: [
-      { id:"po1", name:"Polo 1", price:0, badge:null },
-      { id:"po2", name:"Polo 2", price:0, badge:null },
-      { id:"po3", name:"Polo 3", price:0, badge:null },
-      { id:"po4", name:"Polo 4", price:0, badge:null }
+      { id:"po1", name:"Polo", price:9900, badge:null },
+      { id:"po2", name:"Polo", price:9900, badge:null },
+      { id:"po3", name:"Polo", price:9900, badge:null },
+      { id:"po4", name:"Polo", price:9900, badge:null },
+      { id:"po6", name:"Polo", price:9900, badge:null },
+      { id:"po7", name:"Polo", price:9900, badge:null },
+      { id:"po8", name:"Polo", price:9900, badge:null },
+      { id:"po9", name:"Polo", price:9900, badge:null },
+      { id:"po10", name:"Polo", price:9900, badge:null },
+      { id:"po11", name:"Polo", price:9900, badge:null },
+      { id:"po12", name:"Polo", price:9900, badge:null },
+      { id:"po13", name:"Polo", price:9900, badge:null },
+      { id:"po14", name:"Polo", price:9900, badge:null },
+      { id:"po15", name:"Polo", price:9900, badge:null },
+      { id:"po16", name:"Polo", price:9900, badge:null },
+      { id:"po17", name:"Polo", price:9900, badge:null },
+      { id:"po18", name:"Polo", price:9900, badge:null },
+      { id:"po19", name:"Polo", price:9900, badge:null },
+      { id:"po20", name:"Polo", price:9900, badge:null },
+      { id:"po21", name:"Polo", price:9900, badge:null },
+      { id:"po22", name:"Polo", price:9900, badge:null },
+      { id:"po23", name:"Polo", price:9900, badge:null },
+      { id:"po24", name:"Polo", price:9900, badge:null },
+      { id:"po25", name:"Polo", price:9900, badge:null },
+      { id:"po26", name:"Polo", price:9900, badge:null },
+      { id:"po27", name:"Polo", price:9900, badge:null },
+      { id:"po28", name:"Polo", price:9900, badge:null },
+      { id:"po29", name:"Polo", price:9900, badge:null },
+      { id:"po30", name:"Polo", price:9900, badge:null },
+      { id:"po31", name:"Polo", price:9900, badge:null },
+      { id:"po32", name:"Polo", price:9900, badge:null },
+      { id:"po33", name:"Polo", price:9900, badge:null },
+      { id:"po34", name:"Polo", price:9900, badge:null },
+      { id:"po35", name:"Polo", price:9900, badge:null },
+      { id:"po36", name:"Polo", price:9900, badge:null },
+      { id:"po38", name:"Polo", price:9900, badge:null },
+      { id:"po39", name:"Polo", price:9900, badge:null },
+      { id:"po40", name:"Polo", price:9900, badge:null },
+      { id:"po41", name:"Polo", price:9900, badge:null },
+      { id:"po42", name:"Polo", price:9900, badge:null },
+      { id:"po43", name:"Polo", price:9900, badge:null },
+      { id:"po44", name:"Polo", price:9900, badge:null }
+      
     ]
   },
   {
@@ -575,12 +677,36 @@ const CATALOGUE = [
     ]
   },
   {
-    id: "souscorps", icon: "🩱", label: "Sous Corps",
+    id: "souscorps", icon: "👔", label: "Chemisette",
     items: [
-      { id:"sc1", name:"Sous Corps 1", price:0, badge:null },
-      { id:"sc2", name:"Sous Corps 2", price:0, badge:null },
-      { id:"sc3", name:"Sous Corps 3", price:0, badge:null },
-      { id:"sc4", name:"Sous Corps 4", price:0, badge:null }
+      { id:"sc1", name:"Chemisette", price:8900, badge:null },
+      { id:"sc2", name:"Chemisette", price:8900, badge:null },
+      { id:"sc3", name:"Chemisette", price:8900, badge:null },
+      { id:"sc4", name:"Chemisette", price:8900, badge:null },
+      { id:"sc5", name:"Chemisette", price:8900, badge:null },
+      { id:"sc6", name:"Chemisette", price:8900, badge:null },
+      { id:"sc7", name:"Chemisette", price:8900, badge:null },
+      { id:"sc8", name:"Chemisette", price:8900, badge:null },
+      { id:"sc9", name:"Chemisette", price:8900, badge:null },
+      { id:"sc10", name:"Chemisette", price:8900, badge:null },
+      { id:"sc11", name:"Chemisette", price:8900, badge:null },
+      { id:"sc12", name:"Chemisette", price:8900, badge:null },
+      { id:"sc13", name:"Chemisette", price:8900, badge:null },
+      { id:"sc14", name:"Chemisette", price:8900, badge:null },
+      { id:"sc15", name:"Chemisette", price:8900, badge:null },
+      { id:"sc16", name:"Chemisette", price:8900, badge:null },
+      { id:"sc17", name:"Chemisette", price:8900, badge:null },
+      { id:"sc18", name:"Chemisette", price:8900, badge:null },
+      { id:"sc19", name:"Chemisette", price:8900, badge:null },
+      { id:"sc20", name:"Chemisette", price:8900, badge:null },
+      { id:"sc21", name:"Chemisette", price:8900, badge:null },
+      { id:"sc22", name:"Chemisette", price:8900, badge:null },
+      { id:"sc23", name:"Chemisette", price:8900, badge:null },
+      { id:"sc24", name:"Chemisette", price:8900, badge:null },
+      { id:"sc25", name:"Chemisette", price:8900, badge:null },
+      { id:"sc26", name:"Chemisette", price:8900, badge:null },
+      { id:"sc27", name:"Chemisette", price:8900, badge:null },
+      { id:"sc28", name:"Chemisette", price:8900, badge:null }
     ]
   },
   {
